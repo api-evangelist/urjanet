@@ -1,0 +1,86 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Urjanet
+providerId: urjanet
+created: '2026-06-21'
+modified: '2026-06-21'
+reconciled: false
+tags:
+- Utility Data
+- Energy
+- Aggregation
+- FinOps
+- Cost Management
+- FOCUS
+description: >-
+  FinOps view of Urjanet (now part of Arcadia) Utility Cloud / "Arc" spend.
+  Because Urjanet pricing is sales-led and not publicly published, billing
+  model, meters, and rates are not reconciled. Cost is typically driven by data
+  volume, number of connected utility accounts/credentials, commodities,
+  geographic coverage, and data refresh frequency under a negotiated contract.
+notes: >-
+  Replace meters and billing model with reconciled detail only when obtained
+  from a Urjanet / Arcadia contract or invoice; no public rate card exists.
+sources:
+- https://urjanet.com/
+- https://www.arcadia.com/platform/utility-bill-interval-data
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Urjanet (Arcadia)
+serviceCategory: Data and Analytics
+billingModel:
+  pricingCategory: Contract / Sales-Led
+  billingFrequency: Contract-Defined
+  billingCurrency: USD
+  chargeCategories:
+  - Usage
+  - Purchase
+focusColumns:
+  ServiceName: Urjanet Utility Cloud
+  ServiceCategory: Data and Analytics
+  ProviderName: Urjanet (Arcadia)
+  PublisherName: Arcadia
+  InvoiceIssuerName: Arcadia
+  BillingCurrency: USD
+  ChargeCategory: Usage
+  PricingCategory: Contract / Sales-Led
+meters:
+- name: connected_accounts
+  description: Number of connected utility accounts / credentials under management (likely cost driver; not reconciled).
+  unit: accounts
+  aggregation: sum
+  dimensions:
+  - account
+  - commodity
+- name: statements_collected
+  description: Utility statements / bills collected (likely cost driver; not reconciled).
+  unit: statements
+  aggregation: sum
+  dimensions:
+  - account
+  - provider
+- name: usage_data_volume
+  description: Volume of usage / interval data retrieved (likely cost driver; not reconciled).
+  unit: records
+  aggregation: sum
+  dimensions:
+  - account
+  - commodity
+principles:
+- name: Visibility
+  description: Track connected accounts, statement volume, and usage-data pulls against contracted commitments.
+- name: Allocation
+  description: Map connected accounts and sites to internal cost centers / business units.
+- name: Optimization
+  description: Prune inactive credentials and scope commodities/coverage to what is needed to control contract cost.
+- name: Accountability
+  description: Assign owners per integration; reconcile against the negotiated Arcadia / Urjanet agreement.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

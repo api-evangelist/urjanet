@@ -1,0 +1,200 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Urjanet Utility Cloud API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Obtain a bearer token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.urjanet.com/auth/login",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Authenticate with username and password to obtain a bearer token. Request/response schema not publicly documented in full."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Credentials & Connections",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List or search utility providers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.urjanet.com/utility/providers"
+          },
+          "docs": "Query or search the list of supported utility providers."
+        },
+        {
+          "info": {
+            "name": "Submit utility account credentials",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.urjanet.com/utility/credentials",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submit end-user utility account login credentials to connect and begin data collection."
+        },
+        {
+          "info": {
+            "name": "List or search sites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.urjanet.com/utility/sites"
+          },
+          "docs": "Query or search sites (locations) organizing utility data."
+        },
+        {
+          "info": {
+            "name": "Create a site",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.urjanet.com/utility/sites",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a site (location) to organize utility data."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Statements & Bills",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List utility accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.urjanet.com/accounts"
+          },
+          "docs": "Retrieve utility accounts discovered and enrolled for connected credentials."
+        },
+        {
+          "info": {
+            "name": "List utility statements / bills",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.urjanet.com/statements"
+          },
+          "docs": "Retrieve collected utility statements and bill records."
+        },
+        {
+          "info": {
+            "name": "Upload a utility bill file",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.urjanet.com/utility/files",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Upload a utility statement / bill document for processing."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Meters",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List utility meters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.urjanet.com/utility/meters"
+          },
+          "docs": "List utility meters and service points associated with connected accounts and sites."
+        },
+        {
+          "info": {
+            "name": "Update a utility meter",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.urjanet.com/utility/meters/{meterId}",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update attributes of a specific utility meter."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Webhooks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Update organization (webhook configuration)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.urjanet.com/Organization/{organizationId}",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update organization settings, including webhook endpoint configuration for event notifications."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Urjanet
+providerId: urjanet
+created: '2026-06-21'
+modified: '2026-06-21'
+reconciled: false
+tags:
+- Utility Data
+- Energy
+- Utility Bills
+- Aggregation
+- Plans
+description: >-
+  Urjanet (now part of Arcadia) does not publish public, self-serve pricing for
+  its utility-data API. Access to the Utility Cloud / "Arc" platform is sold
+  through a sales-led, contract-based motion, typically priced by data volume,
+  number of connected utility accounts/credentials, commodities, geographic
+  coverage, and refresh frequency. No tiers, per-call rates, or free tier are
+  published. Prospective customers must contact Arcadia / Urjanet sales for a
+  quote. Because no public pricing exists, this artifact is not reconciled.
+notes: >-
+  Pricing is sales-led and partner-gated. The values below are placeholders
+  indicating a contact-sales motion; replace with reconciled figures only if
+  Arcadia / Urjanet publishes them or provides them under contract.
+sources:
+- https://urjanet.com/
+- https://www.arcadia.com/platform/utility-bill-interval-data
+- https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction
+plans:
+- id: urjanet-enterprise
+  name: Enterprise / Contract
+  type: enterprise
+  description: >-
+    Sales-led, contract-based access to the Urjanet / Arcadia Utility Cloud
+    API. Pricing negotiated by data volume, connected accounts, commodities,
+    coverage, and refresh cadence. Contact sales.
+  entries:
+  - label: Enterprise Agreement
+    name: enterprise
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: Utility Credentials & Connections
+  - name: Statements & Bills
+  - name: Meters
+  - name: Usage / Interval Data
+  - name: Webhooks
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

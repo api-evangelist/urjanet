@@ -1,0 +1,103 @@
+aid: urjanet
+name: Urjanet
+review:
+  question: Does Urjanet expose a documented, publicly accessible REST API, and how does it relate to Arcadia?
+  answer: true
+  date: '2026-06-21'
+  reviewer: API Evangelist
+  acquisitionNote: |
+    Urjanet was acquired by Arcadia in May 2022. Urjanet's global utility-data
+    access was integrated into Arcadia's data and API platform, branded "Arc"
+    and documented as the "Utility Cloud" API. The urjanet.com domain now
+    redirects/points to Arcadia content, and the public API reference lives on
+    docs.arcadia.com. This repo profiles Urjanet as the historical brand and
+    data-aggregation product whose API persists under Arcadia.
+  disambiguation: |
+    Do NOT conflate this entry with the separate "Arcadia" energy/community-solar
+    consumer brand catalog entry (arcadia.com). Two related-but-distinct things
+    share the Arcadia name: (1) Arcadia the company that acquired Urjanet, and
+    (2) the Arcadia/Urjanet utility-DATA platform profiled here. The API surface
+    documented in this repo is the utility-data aggregation API (base URL
+    https://api.urjanet.com), not consumer energy enrollment.
+findings:
+  summary: |
+    Urjanet (now part of Arcadia) provides a documented REST API for utility-data
+    aggregation. The modern surface is the Arcadia "Utility Cloud" API at base URL
+    https://api.urjanet.com, using bearer-token auth obtained via POST /auth/login.
+    Documented resource paths include /utility/providers, /utility/credentials,
+    /utility/sites, /utility/meters, /accounts, /statements, /utility/files, and
+    webhook configuration via the organization resource. A legacy Urjanet "Utility
+    Data Service" surface also exists at base URL https://api.urjanet.net with
+    /api/v1/account, /credential, /meter, /attribute, and /provider endpoints.
+    The platform reports coverage of 9,500+ utility providers across 52 countries.
+    Full request/response schemas are not publicly published; the OpenAPI in this
+    repo documents real endpoints and accurate descriptions without fabricating
+    schema detail. Access is sales-led / partner-gated — there is no public
+    self-serve signup or published pricing — so plans, rate-limits, and finops
+    artifacts are marked reconciled: false.
+  availability:
+    publicDocs: true
+    selfServeSignup: false
+    salesLed: true
+    publishedPricing: false
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.urjanet.com
+      documented: true
+      note: Modern Arcadia "Utility Cloud" / "Arc" API.
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.urjanet.net
+      documented: true
+      note: Legacy Urjanet "Utility Data Service" API; bearer auth via Urjanet AuthServer.
+    - protocol: Webhooks
+      scheme: https
+      documented: true
+      note: Outbound event notifications (new data available, credential status changes), configured per organization.
+  endpointsConfirmedRest:
+    - POST   https://api.urjanet.com/auth/login
+    - POST   https://api.urjanet.com/users
+    - GET    https://api.urjanet.com/utility/providers
+    - POST   https://api.urjanet.com/utility/credentials
+    - GET    https://api.urjanet.com/utility/sites
+    - POST   https://api.urjanet.com/utility/sites
+    - GET    https://api.urjanet.com/accounts
+    - GET    https://api.urjanet.com/statements
+    - POST   https://api.urjanet.com/utility/files
+    - GET    https://api.urjanet.com/utility/meters
+    - PATCH  https://api.urjanet.com/utility/meters/{meterId}
+    - PATCH  https://api.urjanet.com/Organization/{organizationId}
+  endpointsLegacyRest:
+    - POST   https://api.urjanet.net/api/v1/account/create
+    - GET    https://api.urjanet.net/api/v1/account/status/{account_id}
+    - POST   https://api.urjanet.net/api/v1/credential/create
+    - POST   https://api.urjanet.net/api/v1/meter/create
+    - GET    https://api.urjanet.net/api/v1/meter/byaccount/{account_id}
+    - GET    https://api.urjanet.net/api/v1/provider/status/{provider_id}
+sources:
+  - url: https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction
+    type: APIReference
+    note: Modern Utility Cloud API reference; base URL https://api.urjanet.com, bearer auth.
+  - url: https://docs.arcadia.com/v1.0-Utility-Cloud/docs/api-quick-start-guide
+    type: Documentation
+    note: Quick-start showing /auth/login, /utility/credentials, /utility/providers, /utility/sites, /utility/meters, /utility/files.
+  - url: https://developer.urjanet.net/docs/utilitydataservice-api-documentation.html
+    type: APIReference
+    note: Legacy Urjanet Utility Data Service API; base URL https://api.urjanet.net.
+  - url: https://www.arcadia.com/platform/utility-bill-interval-data
+    type: Documentation
+    note: Arcadia utility bill & interval (usage) data product overview; coverage claims.
+  - url: https://urjanet.com/
+    type: Website
+    note: Urjanet site, now Arcadia-branded; "Now part of Arcadia."
+actions:
+  apisYmlCreated: true
+  openapiPath: openapi/urjanet-openapi.yml
+  reason: |
+    Profiled the documented Urjanet / Arcadia Utility Cloud REST API across five
+    API entries (Credentials & Connections, Statements & Bills, Meters, Usage
+    Data, Webhooks). OpenAPI documents only real, confirmed endpoint paths with
+    honest "schema not publicly documented" descriptions rather than fabricated
+    request/response bodies. Plans, rate-limits, and finops are reconciled:false
+    because access is sales-led with no published pricing or limits.

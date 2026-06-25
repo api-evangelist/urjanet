@@ -1,0 +1,210 @@
+openapi: 3.0.1
+info:
+  title: Urjanet Utility Cloud API
+  description: >-
+    REST API for the Urjanet (now part of Arcadia) utility-data aggregation
+    platform, also branded as the Arcadia "Arc" / Utility Cloud platform. The
+    API lets you connect end-user utility account credentials and retrieve
+    normalized utility data — statements/bills, meters, sites, and usage —
+    across thousands of utility providers. Endpoints below reflect resource
+    paths described in Arcadia's public Utility Cloud API documentation; request
+    and response schemas are not fully published and are intentionally left
+    unspecified rather than fabricated. Verify against the official reference at
+    https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction before
+    use.
+  termsOfService: https://urjanet.com/terms-of-service/
+  contact:
+    name: Arcadia / Urjanet Support
+    url: https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction
+  version: '1.0'
+servers:
+  - url: https://api.urjanet.com
+    description: Urjanet / Arcadia Utility Cloud production API base URL.
+security:
+  - bearerAuth: []
+paths:
+  /auth/login:
+    post:
+      operationId: login
+      tags:
+        - Authentication
+      summary: Obtain a bearer token
+      description: >-
+        Authenticate with username and password to obtain a bearer token used
+        in the Authorization header for subsequent requests. Request and
+        response schemas are not publicly documented in full.
+      security: []
+      responses:
+        '200':
+          description: A bearer token for authenticating subsequent API requests.
+  /users:
+    post:
+      operationId: createUser
+      tags:
+        - Users
+      summary: Create a user
+      description: >-
+        Create an additional platform user. Schema not publicly documented in
+        full.
+      responses:
+        '200':
+          description: The created user.
+  /utility/providers:
+    get:
+      operationId: listProviders
+      tags:
+        - Credentials & Connections
+      summary: List or search utility providers
+      description: >-
+        Query the list of supported utility providers, or search for a specific
+        provider by name. Response schema not publicly documented in full.
+      parameters:
+        - name: search
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Optional search term to filter providers.
+      responses:
+        '200':
+          description: A list of matching utility providers.
+  /utility/credentials:
+    post:
+      operationId: createCredential
+      tags:
+        - Credentials & Connections
+      summary: Submit utility account credentials
+      description: >-
+        Submit end-user utility account login credentials so the platform can
+        connect to the utility provider and begin collecting data. Request
+        schema not publicly documented in full.
+      responses:
+        '200':
+          description: The created credential / connection record.
+  /utility/sites:
+    get:
+      operationId: listSites
+      tags:
+        - Credentials & Connections
+      summary: List or search sites
+      description: >-
+        Query or search the sites (locations) organizing utility data. Response
+        schema not publicly documented in full.
+      parameters:
+        - name: search
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Optional search term to filter sites.
+      responses:
+        '200':
+          description: A list of sites.
+    post:
+      operationId: createSite
+      tags:
+        - Credentials & Connections
+      summary: Create a site
+      description: >-
+        Create a site (location) to organize utility data for a specific
+        location. Request schema not publicly documented in full.
+      responses:
+        '200':
+          description: The created site.
+  /accounts:
+    get:
+      operationId: listAccounts
+      tags:
+        - Statements & Bills
+      summary: List utility accounts
+      description: >-
+        Retrieve utility accounts discovered and enrolled for connected
+        credentials. Response schema not publicly documented in full.
+      responses:
+        '200':
+          description: A list of utility accounts.
+  /statements:
+    get:
+      operationId: listStatements
+      tags:
+        - Statements & Bills
+      summary: List utility statements / bills
+      description: >-
+        Retrieve collected utility statements and bill records, including
+        billing periods and charges. Response schema not publicly documented in
+        full.
+      responses:
+        '200':
+          description: A list of utility statements / bills.
+  /utility/files:
+    post:
+      operationId: uploadFile
+      tags:
+        - Statements & Bills
+      summary: Upload a utility bill file
+      description: >-
+        Upload a utility statement / bill document (file) for processing.
+        Request schema not publicly documented in full.
+      responses:
+        '200':
+          description: The uploaded file record.
+  /utility/meters:
+    get:
+      operationId: listMeters
+      tags:
+        - Meters
+      summary: List utility meters
+      description: >-
+        List utility meters and service points associated with connected
+        accounts and sites. Response schema not publicly documented in full.
+      responses:
+        '200':
+          description: A list of utility meters.
+  /utility/meters/{meterId}:
+    patch:
+      operationId: updateMeter
+      tags:
+        - Meters
+      summary: Update a utility meter
+      description: >-
+        Update attributes of a specific utility meter. Request schema not
+        publicly documented in full.
+      parameters:
+        - name: meterId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Identifier of the meter to update.
+      responses:
+        '200':
+          description: The updated meter.
+  /Organization/{organizationId}:
+    patch:
+      operationId: updateOrganization
+      tags:
+        - Webhooks
+      summary: Update organization (including webhook configuration)
+      description: >-
+        Update organization settings, including webhook endpoint configuration
+        used to receive notifications on important events such as new data
+        availability or credential status changes. Request schema not publicly
+        documented in full.
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Identifier of the organization to update.
+      responses:
+        '200':
+          description: The updated organization.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: >-
+        Bearer token obtained from POST /auth/login, sent in the Authorization
+        header as "Bearer {token}".

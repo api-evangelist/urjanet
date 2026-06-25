@@ -1,0 +1,357 @@
+{
+  "info": {
+    "name": "Urjanet Utility Cloud API",
+    "description": "Urjanet (now part of Arcadia) utility-data aggregation REST API. Base URL https://api.urjanet.com, bearer-token auth via POST /auth/login. Endpoints reflect Arcadia's public Utility Cloud API documentation; request/response bodies are not fully published and are left as empty placeholders rather than fabricated.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.urjanet.com"
+    },
+    {
+      "key": "bearerToken",
+      "value": ""
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Obtain a bearer token",
+          "request": {
+            "method": "POST",
+            "auth": {
+              "type": "noauth"
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Authenticate with username and password to obtain a bearer token. Schema not publicly documented in full."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Credentials & Connections",
+      "item": [
+        {
+          "name": "List or search utility providers",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/utility/providers?search=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "utility",
+                "providers"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Query or search the list of supported utility providers."
+          }
+        },
+        {
+          "name": "Submit utility account credentials",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/utility/credentials",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "utility",
+                "credentials"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Submit end-user utility account login credentials to connect and begin data collection."
+          }
+        },
+        {
+          "name": "List or search sites",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/utility/sites?search=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "utility",
+                "sites"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Query or search sites (locations) organizing utility data."
+          }
+        },
+        {
+          "name": "Create a site",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/utility/sites",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "utility",
+                "sites"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a site (location) to organize utility data."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Statements & Bills",
+      "item": [
+        {
+          "name": "List utility accounts",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/accounts",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "accounts"
+              ]
+            },
+            "description": "Retrieve utility accounts discovered and enrolled for connected credentials."
+          }
+        },
+        {
+          "name": "List utility statements / bills",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/statements",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "statements"
+              ]
+            },
+            "description": "Retrieve collected utility statements and bill records."
+          }
+        },
+        {
+          "name": "Upload a utility bill file",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/utility/files",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "utility",
+                "files"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Upload a utility statement / bill document for processing."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Meters",
+      "item": [
+        {
+          "name": "List utility meters",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/utility/meters",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "utility",
+                "meters"
+              ]
+            },
+            "description": "List utility meters and service points associated with connected accounts and sites."
+          }
+        },
+        {
+          "name": "Update a utility meter",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/utility/meters/:meterId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "utility",
+                "meters",
+                ":meterId"
+              ],
+              "variable": [
+                {
+                  "key": "meterId",
+                  "value": ""
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update attributes of a specific utility meter."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Webhooks",
+      "item": [
+        {
+          "name": "Update organization (webhook configuration)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Organization/:organizationId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Organization",
+                ":organizationId"
+              ],
+              "variable": [
+                {
+                  "key": "organizationId",
+                  "value": ""
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update organization settings, including webhook endpoint configuration for event notifications."
+          }
+        }
+      ]
+    }
+  ]
+}
