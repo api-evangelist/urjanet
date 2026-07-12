@@ -106,6 +106,10 @@ apis:
     as new data becoming available or a credential status change that requires
     action.
 common:
+- type: DomainSecurity
+  url: security/urjanet-domain-security.yml
+- type: Authentication
+  url: authentication/urjanet-authentication.yml
 - type: GitHubOrganization
   url: https://github.com/urjanet
 - type: LinkedIn
