@@ -106,6 +106,8 @@ apis:
     as new data becoming available or a credential status change that requires
     action.
 common:
+- type: AgenticAccess
+  url: agentic-access/urjanet-agentic-access.yml
 - type: DomainSecurity
   url: security/urjanet-domain-security.yml
 - type: Authentication
