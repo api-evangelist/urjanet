@@ -1,0 +1,53 @@
+openapi: 3.0.1
+info:
+  title: Urjanet Utility Cloud Authentication Statements & Bills API
+  description: REST API for the Urjanet (now part of Arcadia) utility-data aggregation platform, also branded as the Arcadia "Arc" / Utility Cloud platform. The API lets you connect end-user utility account credentials and retrieve normalized utility data — statements/bills, meters, sites, and usage — across thousands of utility providers. Endpoints below reflect resource paths described in Arcadia's public Utility Cloud API documentation; request and response schemas are not fully published and are intentionally left unspecified rather than fabricated. Verify against the official reference at https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction before use.
+  termsOfService: https://urjanet.com/terms-of-service/
+  contact:
+    name: Arcadia / Urjanet Support
+    url: https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction
+  version: '1.0'
+servers:
+- url: https://api.urjanet.com
+  description: Urjanet / Arcadia Utility Cloud production API base URL.
+security:
+- bearerAuth: []
+tags:
+- name: Statements & Bills
+paths:
+  /accounts:
+    get:
+      operationId: listAccounts
+      tags:
+      - Statements & Bills
+      summary: List utility accounts
+      description: Retrieve utility accounts discovered and enrolled for connected credentials. Response schema not publicly documented in full.
+      responses:
+        '200':
+          description: A list of utility accounts.
+  /statements:
+    get:
+      operationId: listStatements
+      tags:
+      - Statements & Bills
+      summary: List utility statements / bills
+      description: Retrieve collected utility statements and bill records, including billing periods and charges. Response schema not publicly documented in full.
+      responses:
+        '200':
+          description: A list of utility statements / bills.
+  /utility/files:
+    post:
+      operationId: uploadFile
+      tags:
+      - Statements & Bills
+      summary: Upload a utility bill file
+      description: Upload a utility statement / bill document (file) for processing. Request schema not publicly documented in full.
+      responses:
+        '200':
+          description: The uploaded file record.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Bearer token obtained from POST /auth/login, sent in the Authorization header as "Bearer {token}".

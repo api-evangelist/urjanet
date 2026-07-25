@@ -1,0 +1,40 @@
+openapi: 3.0.1
+info:
+  title: Urjanet Utility Cloud Authentication Webhooks API
+  description: REST API for the Urjanet (now part of Arcadia) utility-data aggregation platform, also branded as the Arcadia "Arc" / Utility Cloud platform. The API lets you connect end-user utility account credentials and retrieve normalized utility data — statements/bills, meters, sites, and usage — across thousands of utility providers. Endpoints below reflect resource paths described in Arcadia's public Utility Cloud API documentation; request and response schemas are not fully published and are intentionally left unspecified rather than fabricated. Verify against the official reference at https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction before use.
+  termsOfService: https://urjanet.com/terms-of-service/
+  contact:
+    name: Arcadia / Urjanet Support
+    url: https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction
+  version: '1.0'
+servers:
+- url: https://api.urjanet.com
+  description: Urjanet / Arcadia Utility Cloud production API base URL.
+security:
+- bearerAuth: []
+tags:
+- name: Webhooks
+paths:
+  /Organization/{organizationId}:
+    patch:
+      operationId: updateOrganization
+      tags:
+      - Webhooks
+      summary: Update organization (including webhook configuration)
+      description: Update organization settings, including webhook endpoint configuration used to receive notifications on important events such as new data availability or credential status changes. Request schema not publicly documented in full.
+      parameters:
+      - name: organizationId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Identifier of the organization to update.
+      responses:
+        '200':
+          description: The updated organization.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Bearer token obtained from POST /auth/login, sent in the Authorization header as "Bearer {token}".
