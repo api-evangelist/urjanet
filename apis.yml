@@ -9,7 +9,20 @@ description: Urjanet (now part of Arcadia) is a utility-data aggregation platfor
   "Arc" / Utility Cloud platform, exposed through a REST API (base URL
   https://api.urjanet.com) for connecting utility credentials and retrieving
   normalized utility data. Pricing is sales-led and not publicly published.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: enterprise
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Enterprise · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/urjanet.png
 tags:
 - Utility Data
 - Energy
@@ -20,91 +33,103 @@ tags:
 created: '2026-06-21'
 specificationVersion: '0.19'
 apis:
+- aid: urjanet:urjanet-authentication-api
+  name: Urjanet Authentication API
+  description: The Authentication API from Urjanet — 1 operation(s) for authentication.
+  humanURL: https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction
+  baseURL: https://api.urjanet.com
+  tags:
+  - Authentication
+  properties:
+  - type: OpenAPI
+    url: openapi/urjanet-authentication-api-openapi.yml
+  - type: Documentation
+    url: https://docs.arcadia.com/v1.0-Utility-Cloud/docs/api-quick-start-guide
+  - type: APIReference
+    url: https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction
+  - type: Documentation
+    url: https://www.arcadia.com/platform/utility-bill-interval-data
 - aid: urjanet:urjanet-credentials-connections-api
   name: Urjanet Credentials & Connections API
-  tags:
-  - Credentials
-  - Connections
-  - Authentication
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  description: >-
+    The Credentials & Connections API from Urjanet — 3 operation(s) for credentials & connections.
   humanURL: https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction
   baseURL: https://api.urjanet.com
-  properties:
-  - url: https://docs.arcadia.com/v1.0-Utility-Cloud/docs/api-quick-start-guide
-    type: Documentation
-  - url: https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction
-    type: APIReference
-  - url: openapi/urjanet-openapi.yml
-    type: OpenAPI
-  description: Submit and manage end-user utility account login credentials so the
-    platform can connect to utility providers and begin collecting data, and look
-    up supported utility providers.
-- aid: urjanet:urjanet-statements-bills-api
-  name: Urjanet Statements & Bills API
   tags:
-  - Statements
-  - Bills
-  - Invoices
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction
-  baseURL: https://api.urjanet.com
+  - Credentials & Connections
   properties:
-  - url: https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction
-    type: APIReference
-  - url: openapi/urjanet-openapi.yml
-    type: OpenAPI
-  description: Retrieve collected utility statements and bill documents, including
-    billing periods, charges, and source bill PDFs, organized by account and site.
+  - type: OpenAPI
+    url: openapi/urjanet-credentials-connections-api-openapi.yml
+  - type: Documentation
+    url: https://docs.arcadia.com/v1.0-Utility-Cloud/docs/api-quick-start-guide
+  - type: APIReference
+    url: https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction
+  - type: Documentation
+    url: https://www.arcadia.com/platform/utility-bill-interval-data
 - aid: urjanet:urjanet-meters-api
   name: Urjanet Meters API
+  description: The Meters API from Urjanet — 2 operation(s) for meters.
+  humanURL: https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction
+  baseURL: https://api.urjanet.com
   tags:
   - Meters
-  - Service Points
-  - Accounts
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  properties:
+  - type: OpenAPI
+    url: openapi/urjanet-meters-api-openapi.yml
+  - type: Documentation
+    url: https://docs.arcadia.com/v1.0-Utility-Cloud/docs/api-quick-start-guide
+  - type: APIReference
+    url: https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction
+  - type: Documentation
+    url: https://www.arcadia.com/platform/utility-bill-interval-data
+- aid: urjanet:urjanet-statements-bills-api
+  name: Urjanet Statements & Bills API
+  description: The Statements & Bills API from Urjanet — 3 operation(s) for statements & bills.
   humanURL: https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction
   baseURL: https://api.urjanet.com
-  properties:
-  - url: https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction
-    type: APIReference
-  - url: openapi/urjanet-openapi.yml
-    type: OpenAPI
-  description: List and manage utility meters and service points associated with
-    connected accounts and sites.
-- aid: urjanet:urjanet-usage-data-api
-  name: Urjanet Usage Data API
   tags:
-  - Usage Data
-  - Interval Data
-  - Consumption
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://www.arcadia.com/platform/utility-bill-interval-data
-  baseURL: https://api.urjanet.com
+  - Statements & Bills
   properties:
-  - url: https://www.arcadia.com/platform/utility-bill-interval-data
-    type: Documentation
-  - url: openapi/urjanet-openapi.yml
-    type: OpenAPI
-  description: Access normalized consumption and high-resolution interval (usage)
-    data captured from utility meters and statements across electricity, gas, water,
-    and other commodities.
+  - type: OpenAPI
+    url: openapi/urjanet-statements-bills-api-openapi.yml
+  - type: Documentation
+    url: https://docs.arcadia.com/v1.0-Utility-Cloud/docs/api-quick-start-guide
+  - type: APIReference
+    url: https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction
+  - type: Documentation
+    url: https://www.arcadia.com/platform/utility-bill-interval-data
+- aid: urjanet:urjanet-users-api
+  name: Urjanet Users API
+  description: The Users API from Urjanet — 1 operation(s) for users.
+  humanURL: https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction
+  baseURL: https://api.urjanet.com
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/urjanet-users-api-openapi.yml
+  - type: Documentation
+    url: https://docs.arcadia.com/v1.0-Utility-Cloud/docs/api-quick-start-guide
+  - type: APIReference
+    url: https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction
+  - type: Documentation
+    url: https://www.arcadia.com/platform/utility-bill-interval-data
 - aid: urjanet:urjanet-webhooks-api
   name: Urjanet Webhooks API
-  tags:
-  - Webhooks
-  - Events
-  - Notifications
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  description: The Webhooks API from Urjanet — 1 operation(s) for webhooks.
   humanURL: https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction
   baseURL: https://api.urjanet.com
+  tags:
+  - Webhooks
   properties:
-  - url: https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction
-    type: APIReference
-  - url: openapi/urjanet-openapi.yml
-    type: OpenAPI
-  description: Configure webhook notifications for important platform events, such
-    as new data becoming available or a credential status change that requires
-    action.
+  - type: OpenAPI
+    url: openapi/urjanet-webhooks-api-openapi.yml
+  - type: Documentation
+    url: https://docs.arcadia.com/v1.0-Utility-Cloud/docs/api-quick-start-guide
+  - type: APIReference
+    url: https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction
+  - type: Documentation
+    url: https://www.arcadia.com/platform/utility-bill-interval-data
 common:
 - type: AgenticAccess
   url: agentic-access/urjanet-agentic-access.yml
