@@ -1,0 +1,24 @@
+{
+  "provider": "urjanet",
+  "sources": [
+    "urjanet-authentication-api-openapi.yml",
+    "urjanet-credentials-connections-api-openapi.yml",
+    "urjanet-meters-api-openapi.yml",
+    "urjanet-statements-bills-api-openapi.yml",
+    "urjanet-users-api-openapi.yml",
+    "urjanet-webhooks-api-openapi.yml"
+  ],
+  "outputs": [
+    "urjanet-authentication-api-openapi.yml",
+    "urjanet-credentials-connections-api-openapi.yml",
+    "urjanet-meters-api-openapi.yml",
+    "urjanet-statements-bills-api-openapi.yml",
+    "urjanet-users-api-openapi.yml",
+    "urjanet-webhooks-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
