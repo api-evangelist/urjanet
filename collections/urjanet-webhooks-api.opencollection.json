@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Urjanet Utility Cloud Authentication Webhooks API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Webhooks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Update organization (including webhook configuration)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.urjanet.com/Organization/:organizationId",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the organization to update."
+              }
+            ]
+          },
+          "docs": "Update organization settings, including webhook endpoint configuration used to receive notifications on important events such as new data availability or credential status changes. Request schema not publicly documented in full."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

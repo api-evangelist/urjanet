@@ -1,0 +1,247 @@
+{
+  "item": [
+    {
+      "id": "63e4de0d-881e-46a2-ae9f-0086cbf2a3da",
+      "name": "Statements & Bills",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3aad22b8-73a9-4b9a-9b36-1d744a78048b",
+          "name": "List utility accounts",
+          "request": {
+            "name": "List utility accounts",
+            "description": {
+              "content": "Retrieve utility accounts discovered and enrolled for connected credentials. Response schema not publicly documented in full.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c2fc8a27-a6b0-4676-8de9-e8d6e8b511f4",
+              "name": "A list of utility accounts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "09c4df5a-75ac-459b-a13d-32d379c1f981",
+          "name": "List utility statements / bills",
+          "request": {
+            "name": "List utility statements / bills",
+            "description": {
+              "content": "Retrieve collected utility statements and bill records, including billing periods and charges. Response schema not publicly documented in full.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "statements"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e6c51d8a-30dc-4620-92e6-2ce04ddad82c",
+              "name": "A list of utility statements / bills.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "statements"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6acb95f2-4782-4eba-b562-90796ea5c436",
+          "name": "Upload a utility bill file",
+          "request": {
+            "name": "Upload a utility bill file",
+            "description": {
+              "content": "Upload a utility statement / bill document (file) for processing. Request schema not publicly documented in full.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "utility",
+                "files"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0a743861-200a-4bd3-889e-0e636a039156",
+              "name": "The uploaded file record.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "utility",
+                    "files"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.urjanet.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "525d2ef0-72e3-4a20-9121-9c9750e5f89e",
+    "name": "Urjanet Utility Cloud Authentication Statements & Bills API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the Urjanet (now part of Arcadia) utility-data aggregation platform, also branded as the Arcadia \"Arc\" / Utility Cloud platform. The API lets you connect end-user utility account credentials and retrieve normalized utility data — statements/bills, meters, sites, and usage — across thousands of utility providers. Endpoints below reflect resource paths described in Arcadia's public Utility Cloud API documentation; request and response schemas are not fully published and are intentionally left unspecified rather than fabricated. Verify against the official reference at https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction before use.\n\nContact Support:\n Name: Arcadia / Urjanet Support",
+      "type": "text/plain"
+    }
+  }
+}

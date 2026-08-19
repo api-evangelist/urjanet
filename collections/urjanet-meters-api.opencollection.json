@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Urjanet Utility Cloud Authentication Meters API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Meters",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List utility meters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.urjanet.com/utility/meters"
+          },
+          "docs": "List utility meters and service points associated with connected accounts and sites. Response schema not publicly documented in full."
+        },
+        {
+          "info": {
+            "name": "Update a utility meter",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.urjanet.com/utility/meters/:meterId",
+            "params": [
+              {
+                "name": "meterId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the meter to update."
+              }
+            ]
+          },
+          "docs": "Update attributes of a specific utility meter. Request schema not publicly documented in full."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

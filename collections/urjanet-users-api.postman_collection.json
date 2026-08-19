@@ -1,0 +1,109 @@
+{
+  "item": [
+    {
+      "id": "a391e4f5-19d7-4d69-8405-80d176e874f4",
+      "name": "Users",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d13b4e12-fefa-4f78-98de-bd74a8002e03",
+          "name": "Create a user",
+          "request": {
+            "name": "Create a user",
+            "description": {
+              "content": "Create an additional platform user. Schema not publicly documented in full.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f65d9050-6388-4744-a31e-5217df2b5560",
+              "name": "The created user.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.urjanet.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "23bf2e9e-0354-4808-8a0c-f84b630869dc",
+    "name": "Urjanet Utility Cloud Authentication Users API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the Urjanet (now part of Arcadia) utility-data aggregation platform, also branded as the Arcadia \"Arc\" / Utility Cloud platform. The API lets you connect end-user utility account credentials and retrieve normalized utility data — statements/bills, meters, sites, and usage — across thousands of utility providers. Endpoints below reflect resource paths described in Arcadia's public Utility Cloud API documentation; request and response schemas are not fully published and are intentionally left unspecified rather than fabricated. Verify against the official reference at https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction before use.\n\nContact Support:\n Name: Arcadia / Urjanet Support",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "item": [
+    {
+      "id": "e81eaa48-2f96-4cb4-b044-25eb065d0ec8",
+      "name": "Meters",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b41b01a2-644d-4165-9008-c6d85bfa0daa",
+          "name": "List utility meters",
+          "request": {
+            "name": "List utility meters",
+            "description": {
+              "content": "List utility meters and service points associated with connected accounts and sites. Response schema not publicly documented in full.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "utility",
+                "meters"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "be19c272-f364-493b-a95d-367a3bce8ab7",
+              "name": "A list of utility meters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "utility",
+                    "meters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "44ddd79a-1caa-4bf7-8cb6-4c96122eccbf",
+          "name": "Update a utility meter",
+          "request": {
+            "name": "Update a utility meter",
+            "description": {
+              "content": "Update attributes of a specific utility meter. Request schema not publicly documented in full.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "utility",
+                "meters",
+                ":meterId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "meterId",
+                  "description": "(Required) Identifier of the meter to update."
+                }
+              ]
+            },
+            "method": "PATCH",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5cca3888-910a-413c-91a3-b9d0bcc0a07e",
+              "name": "The updated meter.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "utility",
+                    "meters",
+                    ":meterId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "meterId",
+                      "description": "(Required) Identifier of the meter to update."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.urjanet.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4582d807-7098-48ce-839a-210b6073cd4e",
+    "name": "Urjanet Utility Cloud Authentication Meters API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the Urjanet (now part of Arcadia) utility-data aggregation platform, also branded as the Arcadia \"Arc\" / Utility Cloud platform. The API lets you connect end-user utility account credentials and retrieve normalized utility data — statements/bills, meters, sites, and usage — across thousands of utility providers. Endpoints below reflect resource paths described in Arcadia's public Utility Cloud API documentation; request and response schemas are not fully published and are intentionally left unspecified rather than fabricated. Verify against the official reference at https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction before use.\n\nContact Support:\n Name: Arcadia / Urjanet Support",
+      "type": "text/plain"
+    }
+  }
+}

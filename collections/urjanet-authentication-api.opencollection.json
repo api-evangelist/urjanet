@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Urjanet Utility Cloud Authentication API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Obtain a bearer token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.urjanet.com/auth/login"
+          },
+          "docs": "Authenticate with username and password to obtain a bearer token used in the Authorization header for subsequent requests. Request and response schemas are not publicly documented in full."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

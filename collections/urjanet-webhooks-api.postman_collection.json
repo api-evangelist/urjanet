@@ -1,0 +1,127 @@
+{
+  "item": [
+    {
+      "id": "9a7fefd5-fcad-45ec-844b-14eb35375027",
+      "name": "Webhooks",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a1b5b4a6-1f69-4ab3-b5f9-f7cba47594dc",
+          "name": "Update organization (including webhook configuration)",
+          "request": {
+            "name": "Update organization (including webhook configuration)",
+            "description": {
+              "content": "Update organization settings, including webhook endpoint configuration used to receive notifications on important events such as new data availability or credential status changes. Request schema not publicly documented in full.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Organization",
+                ":organizationId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organizationId",
+                  "description": "(Required) Identifier of the organization to update."
+                }
+              ]
+            },
+            "method": "PATCH",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "724be06d-cd28-4d5c-a52d-64e273984865",
+              "name": "The updated organization.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Organization",
+                    ":organizationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organizationId",
+                      "description": "(Required) Identifier of the organization to update."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.urjanet.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "dfb2152d-e6ba-46d0-b576-10b98e9536f0",
+    "name": "Urjanet Utility Cloud Authentication Webhooks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the Urjanet (now part of Arcadia) utility-data aggregation platform, also branded as the Arcadia \"Arc\" / Utility Cloud platform. The API lets you connect end-user utility account credentials and retrieve normalized utility data — statements/bills, meters, sites, and usage — across thousands of utility providers. Endpoints below reflect resource paths described in Arcadia's public Utility Cloud API documentation; request and response schemas are not fully published and are intentionally left unspecified rather than fabricated. Verify against the official reference at https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction before use.\n\nContact Support:\n Name: Arcadia / Urjanet Support",
+      "type": "text/plain"
+    }
+  }
+}

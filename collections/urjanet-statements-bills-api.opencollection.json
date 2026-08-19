@@ -1,0 +1,57 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Urjanet Utility Cloud Authentication Statements & Bills API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Statements & Bills",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List utility accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.urjanet.com/accounts"
+          },
+          "docs": "Retrieve utility accounts discovered and enrolled for connected credentials. Response schema not publicly documented in full."
+        },
+        {
+          "info": {
+            "name": "List utility statements / bills",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.urjanet.com/statements"
+          },
+          "docs": "Retrieve collected utility statements and bill records, including billing periods and charges. Response schema not publicly documented in full."
+        },
+        {
+          "info": {
+            "name": "Upload a utility bill file",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.urjanet.com/utility/files"
+          },
+          "docs": "Upload a utility statement / bill document (file) for processing. Request schema not publicly documented in full."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
