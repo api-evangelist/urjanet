@@ -31,7 +31,7 @@ tags:
 - Meters
 - Sustainability
 created: '2026-06-21'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: urjanet:urjanet-authentication-api
   name: Urjanet Authentication API
