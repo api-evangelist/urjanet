@@ -1,12 +1,7 @@
 {
   "provider": "urjanet",
   "sources": [
-    "urjanet-authentication-api-openapi.yml",
-    "urjanet-credentials-connections-api-openapi.yml",
-    "urjanet-meters-api-openapi.yml",
-    "urjanet-statements-bills-api-openapi.yml",
-    "urjanet-users-api-openapi.yml",
-    "urjanet-webhooks-api-openapi.yml"
+    "_original/urjanet-openapi.yml"
   ],
   "outputs": [
     "urjanet-authentication-api-openapi.yml",
@@ -19,6 +14,23 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "urjanet-openapi.yml: upgraded openapi 3.0.1 -> OpenAPI 3.2.0",
+    "urjanet-openapi.yml: declared missing tag: Authentication",
+    "urjanet-openapi.yml: declared missing tag: Credentials & Connections",
+    "urjanet-openapi.yml: declared missing tag: Meters",
+    "urjanet-openapi.yml: declared missing tag: Statements & Bills",
+    "urjanet-openapi.yml: declared missing tag: Users",
+    "urjanet-openapi.yml: declared missing tag: Webhooks",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "urjanet-authentication-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "urjanet-credentials-connections-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "urjanet-meters-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "urjanet-statements-bills-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "urjanet-users-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "urjanet-webhooks-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

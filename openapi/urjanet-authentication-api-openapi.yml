@@ -1,7 +1,7 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
   title: Urjanet Utility Cloud Authentication API
-  description: REST API for the Urjanet (now part of Arcadia) utility-data aggregation platform, also branded as the Arcadia "Arc" / Utility Cloud platform. The API lets you connect end-user utility account credentials and retrieve normalized utility data — statements/bills, meters, sites, and usage — across thousands of utility providers. Endpoints below reflect resource paths described in Arcadia's public Utility Cloud API documentation; request and response schemas are not fully published and are intentionally left unspecified rather than fabricated. Verify against the official reference at https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction before use.
+  description: REST API for the Urjanet (now part of Arcadia) utility-data aggregation platform, also branded as the Arcadia "Arc" / Utility Cloud platform.
   termsOfService: https://urjanet.com/terms-of-service/
   contact:
     name: Arcadia / Urjanet Support
