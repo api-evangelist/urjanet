@@ -1,4 +1,4 @@
-# Urjanet (urjanet)
+# Urjanet
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,139 +64,128 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Urjanet (now part of Arcadia) is a utility-data aggregation platform that programmatically collects utility bill, statement, meter, and interval usage data from thousands of electricity, gas, water, waste, and telecom providers worldwide. Following Arcadia's 2022 acquisition, Urjanet's data access powers the Arcadia "Arc" / Utility Cloud platform, exposed through a REST API (base URL `https://api.urjanet.com`) for connecting utility credentials and retrieving normalized utility data. Pricing is sales-led and not publicly published.
+Urjanet (now part of Arcadia) is a utility-data aggregation platform that programmatically collects utility bill, statement, meter, and interval usage data from thousands of electricity, gas, water, waste, and telecom providers worldwide. Following Arcadia's 2022 acquisition, Urjanet's data access powers the Arcadia "Arc" / Utility Cloud platform, exposed through a REST API (base URL https://api.urjanet.com) for connecting utility credentials and retrieving normalized utility data. Pricing is sales-led and not publicly published.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/urjanet/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/urjanet/refs/heads/main/apis.yml)
+**Areas:** Utility Data · Energy · Utility Bills · Aggregation · Meters · Sustainability · Utilities
 
-> Note: "Urjanet" and "Arcadia" are related. Arcadia acquired Urjanet in 2022 and the utility-data API now lives under Arcadia's documentation. This entry profiles the utility-DATA aggregation API and is distinct from any separate consumer-facing Arcadia (arcadia.com) catalog entry.
+## Urjanet on APIs.io
 
-## Tags
+Everything profiled for Urjanet is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/urjanet/](https://apis.io/providers/urjanet/)** — or go straight to one of the APIs or properties below.
 
-- Utility Data
-- Energy
-- Utility Bills
-- Aggregation
-- Meters
-- Sustainability
+### APIs (6)
 
-## Timestamps
+- [Urjanet Authentication API](https://apis.io/apis/urjanet/urjanet-authentication-api/) — The Authentication API from Urjanet — 1 operation(s) for authentication.
+- [Urjanet Credentials & Connections API](https://apis.io/apis/urjanet/urjanet-credentials-connections-api/) — The Credentials & Connections API from Urjanet — 3 operation(s) for credentials & connections.
+- [Urjanet Meters API](https://apis.io/apis/urjanet/urjanet-meters-api/) — The Meters API from Urjanet — 2 operation(s) for meters.
+- [Urjanet Statements & Bills API](https://apis.io/apis/urjanet/urjanet-statements-bills-api/) — The Statements & Bills API from Urjanet — 3 operation(s) for statements & bills.
+- [Urjanet Users API](https://apis.io/apis/urjanet/urjanet-users-api/) — The Users API from Urjanet — 1 operation(s) for users.
+- [Urjanet Webhooks API](https://apis.io/apis/urjanet/urjanet-webhooks-api/) — The Webhooks API from Urjanet — 1 operation(s) for webhooks.
 
-- **Created:** 2026-06-21
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Urjanet Credentials & Connections API
+#### Agentic access (1)
 
-Submit and manage end-user utility account login credentials so the platform can connect to utility providers and begin collecting data, and look up supported utility providers.
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- **Human URL:** [https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction](https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction)
-- **Base URL:** `https://api.urjanet.com`
+- [Urjanet Agentic Access](https://apis.io/agentic-access/urjanet/urjanet-agentic-access/)
 
-#### Tags
+#### Collections (7)
 
-- Credentials
-- Connections
-- Authentication
+Postman and Open Collection request collections.
 
-#### Properties
+- [Urjanet Utility Cloud API](https://apis.io/collections/urjanet/open-urjanet/)
+- [Urjanet Utility Cloud Authentication API](https://apis.io/collections/urjanet/open-urjanet-authentication-api/)
+- [Urjanet Utility Cloud Authentication Credentials & Connections API](https://apis.io/collections/urjanet/open-urjanet-credentials-connections-api/)
+- [Urjanet Utility Cloud Authentication Meters API](https://apis.io/collections/urjanet/open-urjanet-meters-api/)
+- [Urjanet Utility Cloud Authentication Statements & Bills API](https://apis.io/collections/urjanet/open-urjanet-statements-bills-api/)
+- [Urjanet Utility Cloud Authentication Users API](https://apis.io/collections/urjanet/open-urjanet-users-api/)
+- [Urjanet Utility Cloud Authentication Webhooks API](https://apis.io/collections/urjanet/open-urjanet-webhooks-api/)
 
-- [Documentation](https://docs.arcadia.com/v1.0-Utility-Cloud/docs/api-quick-start-guide)
-- [API Reference](https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction)
-- [OpenAPI](openapi/urjanet-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/urjanet.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/urjanet.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Security (2)
 
-### Urjanet Statements & Bills API
+Authentication, trust centre, and vulnerability disclosure.
 
-Retrieve collected utility statements and bill documents, including billing periods, charges, and source bill PDFs, organized by account and site.
+- [Urjanet Authentication](https://apis.io/security/urjanet/urjanet-authentication/)
+- [Urjanet Domain Security](https://apis.io/security/urjanet/urjanet-domain-security/)
 
-- **Human URL:** [https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction](https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction)
-- **Base URL:** `https://api.urjanet.com`
+#### Plans and pricing (1)
 
-#### Tags
+Published plans, tiers and prices.
 
-- Statements
-- Bills
-- Invoices
+- [Urjanet Plans Pricing](https://apis.io/plans/urjanet/urjanet-plans-pricing/)
 
-#### Properties
+#### Rate limits (1)
 
-- [API Reference](https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction)
-- [OpenAPI](openapi/urjanet-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/urjanet.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/urjanet.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Published request limits.
 
-### Urjanet Meters API
+- [Urjanet Rate Limits](https://apis.io/rate-limits/urjanet/urjanet-rate-limits/)
 
-List and manage utility meters and service points associated with connected accounts and sites.
+#### FinOps (1)
 
-- **Human URL:** [https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction](https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction)
-- **Base URL:** `https://api.urjanet.com`
+What the API costs to run, by operation.
 
-#### Tags
+- [Urjanet Finops](https://apis.io/finops/urjanet/urjanet-finops/)
 
-- Meters
-- Service Points
-- Accounts
+## Where to find this API
 
-#### Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- [API Reference](https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction)
-- [OpenAPI](openapi/urjanet-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/urjanet.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/urjanet.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Urjanet Usage Data API
-
-Access normalized consumption and high-resolution interval (usage) data captured from utility meters and statements across electricity, gas, water, and other commodities.
-
-- **Human URL:** [https://www.arcadia.com/platform/utility-bill-interval-data](https://www.arcadia.com/platform/utility-bill-interval-data)
-- **Base URL:** `https://api.urjanet.com`
-
-#### Tags
-
-- Usage Data
-- Interval Data
-- Consumption
-
-#### Properties
-
-- [Documentation](https://www.arcadia.com/platform/utility-bill-interval-data)
-- [OpenAPI](openapi/urjanet-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/urjanet.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/urjanet.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Urjanet Webhooks API
-
-Configure webhook notifications for important platform events, such as new data becoming available or a credential status change that requires action.
-
-- **Human URL:** [https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction](https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction)
-- **Base URL:** `https://api.urjanet.com`
-
-#### Tags
-
-- Webhooks
-- Events
-- Notifications
-
-#### Properties
-
-- [API Reference](https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction)
-- [OpenAPI](openapi/urjanet-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/urjanet.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/urjanet.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/urjanet)
-- [LinkedIn](https://www.linkedin.com/company/urjanet-inc)
 - [Website](https://urjanet.com/)
 - [Documentation](https://docs.arcadia.com/v1.0-Utility-Cloud/reference/introduction)
-- [Plans](plans/urjanet-plans-pricing.yml)
-- [Rate Limits](rate-limits/urjanet-rate-limits.yml)
-- [Fin Ops](finops/urjanet-finops.yml)
+- [Blog](https://www.arcadia.com:443/blog)
+- [GitHub](https://github.com/urjanet)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 24.9** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 47.8 |
+| Contract governance | 0.0 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 27.4 |
+| Access clarity | 5.3 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 9.8** — Energy & Utilities
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/urjanet/](https://apis.io/providers/urjanet/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Urjanet: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/urjanet/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
